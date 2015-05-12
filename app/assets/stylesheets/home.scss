@@ -4,7 +4,7 @@
 @import "materialize";
 
 body{
-	background: url("bg.JPG")no-repeat center center fixed; 
+	background: url("bg1.JPG")no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -13,3 +13,10 @@ body{
 #menu{
 	padding-top: 15%;
 }
+.nav-wrapper{
+	background-color: transparent;
+}
+ a {
+	color: none;
+}
+

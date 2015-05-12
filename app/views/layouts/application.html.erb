@@ -8,8 +8,56 @@
 </head>
 
 <body>
+	
+ <nav>
+    <div class="nav-wrapper white">
+      <a href="#!" class=" grey-text text-darken-3 brand-logo">Miguel Alfredo Garcia Baca</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down white ">
+        <li><a href="sass.html"class=" grey-text text-darken-3" >
+        	<i class="mdi-action-work"></i></a></li>
+        <li><a href="components.html" class=" grey-text text-darken-3">
+        	<i class="mdi-action-assignment-ind"></i></a></li>
+        <li><a href="javascript.html" class=" grey-text text-darken-3">
+        	<i class="mdi-editor-insert-drive-file"></i></a></li>
+        <li><a href="mobile.html" class=" grey-text text-darken-3">
+        	<i class="mdi-communication-quick-contacts-mail"></i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+         <li><a href="sass.html">About me</a></li>
+        <li><a href="components.html">Contact</a></li>
+        <li><a href="javascript.html">Resume</a></li>
+        <li><a href="mobile.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
 
 <%= yield %>
+<script type="text/javascript">
 
+$(document).ready(function(){
+
+  <% for i in 1..4 -%>
+     $("#box<%= i %>").mouseenter(function(){
+        $("#box<%= i %>").transition({
+  			delay: 100,
+  			easing: 'in',
+  			rotateY: '360deg'
+		});
+     });
+
+     $("#box<%= i %>").mouseleave(function(){
+        $("#box<%= i %>").transition({
+  			eduration: 5000,
+  			
+  			rotateY: '0deg'
+		});
+    });
+  <% end -%>
+
+});
+
+
+</script>
 </body>
 </html>
