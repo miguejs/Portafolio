@@ -40,7 +40,7 @@ $(document).ready(function(){
   <% for i in 1..4 -%>
      $("#box<%= i %>").mouseenter(function(){
         $("#box<%= i %>").transition({
-  			delay: 100,
+  			delay: 150,
   			easing: 'in',
   			rotateY: '360deg'
 		});
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
      $("#box<%= i %>").mouseleave(function(){
         $("#box<%= i %>").transition({
-  			eduration: 5000,
+  			delay: 100,
   			
   			rotateY: '0deg'
 		});
