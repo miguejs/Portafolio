@@ -10,23 +10,27 @@
 
 <body>	
  <nav>
-    <div class="nav-wrapper white">
+    <div id="barra"class="nav-wrapper white">
       <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down white ">
         <li><a href="sass.html"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
         	<i class="mdi-action-work"></i></a></li>
-        <li><a href="components.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
+        <li><a href="<%= pages_about_path %>" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
         	<i class="mdi-action-assignment-ind"></i></a></li>
         <li><a href="javascript.html" class="tooltipped blue-text"data-position="bottom" data-delay="50" data-tooltip="Resume">
         	<i class="mdi-editor-insert-drive-file"></i></a></li>
-        <li><a href="mobile.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
+        <li><a href="<%= pages_contact_path %>" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
         	<i class="mdi-communication-quick-contacts-mail"></i></a></li>
       </ul>
       <ul class="side-nav " id="mobile-demo">
-         <li><a href="sass.html">About me</a></li>
-        <li><a href="components.html">Contact</a></li>
-        <li><a href="javascript.html">Resume</a></li>
-        <li><a href="mobile.html">Projects</a></li>
+         <li><a href="#"class=" blue-text" >
+        	 Projects </a> </li>
+        <li><a href="<%= pages_about_path %>" class="blue-text">
+        	About</a></li>
+        <li><a href="#" class="blue-text">
+        	 Resume</a></li>
+        <li><a href="<%= pages_contact_path %>" class="blue-text">
+             Contact</a></li>
       </ul>
     </div>
   </nav>
