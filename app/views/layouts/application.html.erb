@@ -5,25 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
 </head>
 
-<body>
-	
+<body>	
  <nav>
     <div class="nav-wrapper white">
-      <a href="#!" class=" grey-text text-darken-3 brand-logo">Miguel Alfredo Garcia Baca</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down white ">
-        <li><a href="sass.html"class=" grey-text text-darken-3" >
+        <li><a href="sass.html"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
         	<i class="mdi-action-work"></i></a></li>
-        <li><a href="components.html" class=" grey-text text-darken-3">
+        <li><a href="components.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
         	<i class="mdi-action-assignment-ind"></i></a></li>
-        <li><a href="javascript.html" class=" grey-text text-darken-3">
+        <li><a href="javascript.html" class="tooltipped blue-text"data-position="bottom" data-delay="50" data-tooltip="Resume">
         	<i class="mdi-editor-insert-drive-file"></i></a></li>
-        <li><a href="mobile.html" class=" grey-text text-darken-3">
+        <li><a href="mobile.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
         	<i class="mdi-communication-quick-contacts-mail"></i></a></li>
       </ul>
-      <ul class="side-nav" id="mobile-demo">
+      <ul class="side-nav " id="mobile-demo">
          <li><a href="sass.html">About me</a></li>
         <li><a href="components.html">Contact</a></li>
         <li><a href="javascript.html">Resume</a></li>
@@ -34,29 +33,26 @@
 
 <%= yield %>
 <script type="text/javascript">
-
 $(document).ready(function(){
+    $(".button-collapse").sideNav();
+    //Toast tips
+    $('.tooltipped').tooltip({delay: 50});
+  });
 
-  <% for i in 1..4 -%>
-     $("#box<%= i %>").mouseenter(function(){
-        $("#box<%= i %>").transition({
-  			delay: 150,
-  			easing: 'in',
-  			rotateY: '360deg'
-		});
-     });
-
-     $("#box<%= i %>").mouseleave(function(){
-        $("#box<%= i %>").transition({
-  			delay: 100,
+// $(document).ready(function(){ funcion de transiciones
+//   <% for i in 1..4 -%>
+//      $("#box<%= i %>").click(function(){
+//         $("#box<%= i %>").transition({
   			
-  			rotateY: '0deg'
-		});
-    });
-  <% end -%>
-});
+//   			//delay: 150,
+//   			//easing: 'in',
+//   			x: '40px'
+// 		});
+//      });
 
-
+     
+//   <% end -%>
+// });
 </script>
 </body>
 </html>
