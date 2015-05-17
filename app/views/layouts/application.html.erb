@@ -6,13 +6,36 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body>	
+<body>
  <nav>
+  <%if user_signed_in?%>
+  <div class="nav-wrapper white">
+    <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <ul class="right hide-on-med-and-down white ">
+      <!-- <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> -->
+      <li>
+        <a href="<=% edit_user_registration_path%>"> Editar Projectos </a>
+      </li>
+    </ul>
+    <ul class="side-nav " id="mobile-demo">
+
+       <li><a href="sass.html">About me</a></li>
+      <li><a href="components.html">Contact</a></li>
+      <li><a href="javascript.html">Resume</a></li>
+      <li><a href="mobile.html">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+    <%  else %>
     <div class="nav-wrapper white">
       <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down white ">
+        <li><a href=  "<%=new_user_session_path %>" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Log in" >
+          <i class="fa fa-sign-in"></i></a></li>
         <li><a href="sass.html"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
         	<i class="mdi-action-work"></i></a></li>
         <li><a href="components.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
@@ -31,6 +54,8 @@
     </div>
   </nav>
 
+
+<%  end %>
 <%= yield %>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -43,14 +68,14 @@ $(document).ready(function(){
 //   <% for i in 1..4 -%>
 //      $("#box<%= i %>").click(function(){
 //         $("#box<%= i %>").transition({
-  			
+
 //   			//delay: 150,
 //   			//easing: 'in',
 //   			x: '40px'
 // 		});
 //      });
 
-     
+
 //   <% end -%>
 // });
 </script>
