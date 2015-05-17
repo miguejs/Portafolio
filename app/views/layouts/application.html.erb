@@ -15,11 +15,16 @@
   <div class="nav-wrapper white">
     <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
     <ul class="right hide-on-med-and-down white ">
-      <!-- <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> -->
       <li>
-        <a href="<=% edit_user_registration_path%>"> Editar Projectos </a>
+        <a href="#"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Editar Usuarios" >
+        	<i class="fa fa-users"></i></a>
       </li>
+      <li>
+        <a href="<%= destroy_user_session_path%>"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Log Out"
+          rel="nofollow" data-method="delete">
+        	<i class="fa fa-sign-out"></i></a>
+      </li>
+
     </ul>
     <ul class="side-nav " id="mobile-demo">
 
