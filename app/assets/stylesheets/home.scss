@@ -4,14 +4,12 @@
 @import "materialize";
 
 body{
-	background: url("bg1.JPG")no-repeat center center fixed; 
+	background: url("bg1.JPG")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}	
-#menu{
-	padding-top: 10%;
 }
-
-
+#menu{
+	padding-top: 20%;
+}
