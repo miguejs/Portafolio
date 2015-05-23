@@ -16,7 +16,11 @@
 
     <div class="container">
       <p class="right-align">
-        <a href="<%=posts_path%>"><i class="fa fa-arrow-left fa-3x"></i></a>
+        <a href="<%=posts_path%>"></a>
+
+        <%if user_signed_in?%>
+        <%= link_to raw("<i class='fa fa-pencil-square-o fa-3x'></i>"),edit_post_path(@post)  %>
+        <%  end %>
         </p>
     </div>
 
