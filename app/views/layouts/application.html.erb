@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body class=" white">
  <nav>
   <%if user_signed_in?%>
-  <div class="nav-wrapper white">
+  <div class="nav-wrapper blue">
     <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <ul class="right hide-on-med-and-down white ">
+    <ul class="right hide-on-med-and-down blue ">
       <li>
-        <a href="#"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Editar Usuarios" >
+        <a href="#"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Editar Usuarios" >
         	<i class="fa fa-users"></i></a>
       </li>
       <li>
-        <a href="<%= destroy_user_session_path%>"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Log Out"
+        <a href="<%= destroy_user_session_path%>"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log Out"
           rel="nofollow" data-method="delete">
         	<i class="fa fa-sign-out"></i></a>
       </li>
@@ -36,18 +36,18 @@
   </div>
 </nav>
     <%  else %>
-    <div class="nav-wrapper white">
-      <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
-      <ul class="right hide-on-med-and-down white ">
-        <li><a href=  "<%=new_user_session_path %>" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Log in" >
+    <div class="nav-wrapper blue">
+      <a href="#" data-activates="mobile-demo" class=" white button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down blue ">
+        <li><a href=  "<%=new_user_session_path %>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log in" >
           <i class="fa fa-sign-in"></i></a></li>
-        <li><a href="sass.html"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
+        <li><a href="sass.html"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
         	<i class="mdi-action-work"></i></a></li>
-        <li><a href="components.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
+        <li><a href="components.html" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="About">
         	<i class="mdi-action-assignment-ind"></i></a></li>
-        <li><a href="javascript.html" class="tooltipped blue-text"data-position="bottom" data-delay="50" data-tooltip="Resume">
+        <li><a href="javascript.html" class="tooltipped white-text"data-position="bottom" data-delay="50" data-tooltip="Resume">
         	<i class="mdi-editor-insert-drive-file"></i></a></li>
-        <li><a href="mobile.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
+        <li><a href="mobile.html" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
         	<i class="mdi-communication-quick-contacts-mail"></i></a></li>
       </ul>
       <ul class="side-nav " id="mobile-demo">
