@@ -13,11 +13,15 @@
  <nav>
   <%if user_signed_in?%>
   <div class="nav-wrapper blue">
-    <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <a href="/" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
     <ul class="right hide-on-med-and-down blue ">
       <li>
-        <a href="#"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Editar Usuarios" >
-        	<i class="fa fa-users"></i></a>
+        <a href="<%=root_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Pagina Principal" >
+          <i class="fa fa-home"></i></a>
+      </li>
+      <li>
+        <a href="<%=posts_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip=" Proyectos" >
+        	<i class="mdi-action-work"></i></a>
       </li>
       <li>
         <a href="<%= destroy_user_session_path%>"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log Out"
@@ -37,8 +41,12 @@
 </nav>
     <%  else %>
     <div class="nav-wrapper blue">
+
       <a href="#" data-activates="mobile-demo" class=" white button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down blue ">
+        <li><a href="<%=root_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Pagina Principal" >
+            <i class="fa fa-home"></i></a>
+        </li>
         <li><a href=  "<%=new_user_session_path %>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log in" >
           <i class="fa fa-sign-in"></i></a></li>
         <li><a href="sass.html"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
@@ -67,6 +75,7 @@ $(document).ready(function(){
     $(".button-collapse").sideNav();
     //Toast tips
     $('.tooltipped').tooltip({delay: 50});
+    $('.parallax').parallax();
   });
 
 // $(document).ready(function(){ funcion de transiciones
