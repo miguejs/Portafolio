@@ -10,6 +10,8 @@
 </head>
 
 <body class=" white">
+
+
  <nav>
   <%if user_signed_in?%>
   <div class="nav-wrapper blue">
@@ -35,13 +37,12 @@
        <li><a href="sass.html">About me</a></li>
       <li><a href="components.html">Contact</a></li>
       <li><a href="javascript.html">Resume</a></li>
-      <li><a href="mobile.html">Projects</a></li>
+      <li><a href="<%=posts_path%>">Projects</a></li>
     </ul>
   </div>
 </nav>
     <%  else %>
     <div class="nav-wrapper blue">
-
       <a href="#" data-activates="mobile-demo" class=" white button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down blue ">
         <li><a href="<%=root_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Pagina Principal" >
@@ -49,7 +50,7 @@
         </li>
         <li><a href=  "<%=new_user_session_path %>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log in" >
           <i class="fa fa-sign-in"></i></a></li>
-        <li><a href="sass.html"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
+        <li><a href="<%=posts_path%>"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
         	<i class="mdi-action-view-module"></i></a></li>
         <li><a href="components.html" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="About">
         	<i class="mdi-action-assignment-ind"></i></a></li>
@@ -62,14 +63,22 @@
          <li><a href="sass.html">About me</a></li>
         <li><a href="components.html">Contact</a></li>
         <li><a href="javascript.html">Resume</a></li>
-        <li><a href="mobile.html">Projects</a></li>
+        <li><a href="<%=posts_path%>">Projects</a></li>
       </ul>
     </div>
   </nav>
 
-
 <%  end %>
-<%= yield %>
+<div class="main">
+  <%= yield %>
+</div>
+
+
+
+
+
+
+
 <script type="text/javascript">
 $(document).ready(function(){
     $(".button-collapse").sideNav();
@@ -94,4 +103,5 @@ $(document).ready(function(){
 // });
 </script>
 </body>
+
 </html>
