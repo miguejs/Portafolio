@@ -16,6 +16,10 @@
 !/log/.keep
 /tmp
 .log
+<<<<<<< HEAD
 log/development.log
 *.log
 *.log
+=======
+log/development.log
+>>>>>>> origin/beta

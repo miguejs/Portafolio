@@ -6,53 +6,132 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
-<body>	
+<body class=" white">
+
+
  <nav>
-    <div class="nav-wrapper white">
+<<<<<<< HEAD
+    <div id="barra"class="nav-wrapper white">
       <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down white ">
         <li><a href="sass.html"class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
         	<i class="mdi-action-work"></i></a></li>
-        <li><a href="components.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
+        <li><a href="<%= pages_about_path %>" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="About">
+=======
+  <%if user_signed_in?%>
+  <div class="nav-wrapper blue">
+    <a href="/" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <ul class="right hide-on-med-and-down blue ">
+      <li>
+        <a href="<%=root_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Pagina Principal" >
+          <i class="fa fa-home"></i></a>
+      </li>
+      <li>
+        <a href="<%=posts_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip=" Proyectos" >
+        	<i class="mdi-action-view-module"></i></a>
+      </li>
+      <li>
+        <a href="<%= destroy_user_session_path%>"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log Out"
+          rel="nofollow" data-method="delete">
+        	<i class="fa fa-sign-out"></i></a>
+      </li>
+
+    </ul>
+    <ul class="side-nav " id="mobile-demo">
+
+       <li><a href="sass.html">About me</a></li>
+      <li><a href="components.html">Contact</a></li>
+      <li><a href="javascript.html">Resume</a></li>
+      <li><a href="<%=posts_path%>">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+    <%  else %>
+    <div class="nav-wrapper blue">
+      <a href="#" data-activates="mobile-demo" class=" white button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down blue ">
+        <li><a href="<%=root_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Pagina Principal" >
+            <i class="fa fa-home"></i></a>
+        </li>
+        <li><a href=  "<%=new_user_session_path %>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Log in" >
+          <i class="fa fa-sign-in"></i></a></li>
+        <li><a href="<%=posts_path%>"class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Projects" >
+        	<i class="mdi-action-view-module"></i></a></li>
+        <li><a href="components.html" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="About">
+>>>>>>> origin/Post
         	<i class="mdi-action-assignment-ind"></i></a></li>
-        <li><a href="javascript.html" class="tooltipped blue-text"data-position="bottom" data-delay="50" data-tooltip="Resume">
+        <li><a href="javascript.html" class="tooltipped white-text"data-position="bottom" data-delay="50" data-tooltip="Resume">
         	<i class="mdi-editor-insert-drive-file"></i></a></li>
-        <li><a href="mobile.html" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
+<<<<<<< HEAD
+        <li><a href="<%= pages_contact_path %>" class="tooltipped blue-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
+        	<i class="mdi-communication-quick-contacts-mail"></i></a></li>
+      </ul>
+      <ul class="side-nav " id="mobile-demo">
+         <li><a href="#"class=" blue-text" >
+        	 Projects </a> </li>
+        <li><a href="<%= pages_about_path %>" class="blue-text">
+        	About</a></li>
+        <li><a href="#" class="blue-text">
+        	 Resume</a></li>
+        <li><a href="<%= pages_contact_path %>" class="blue-text">
+             Contact</a></li>
+=======
+        <li><a href="mobile.html" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Contact">
         	<i class="mdi-communication-quick-contacts-mail"></i></a></li>
       </ul>
       <ul class="side-nav " id="mobile-demo">
          <li><a href="sass.html">About me</a></li>
         <li><a href="components.html">Contact</a></li>
         <li><a href="javascript.html">Resume</a></li>
-        <li><a href="mobile.html">Projects</a></li>
+        <li><a href="<%=posts_path%>">Projects</a></li>
+>>>>>>> origin/Post
       </ul>
     </div>
   </nav>
 
-<%= yield %>
+<%  end %>
+<div class="main">
+  <%= yield %>
+</div>
+
+
+
+
+
+
+
 <script type="text/javascript">
 $(document).ready(function(){
     $(".button-collapse").sideNav();
     //Toast tips
     $('.tooltipped').tooltip({delay: 50});
+<<<<<<< HEAD
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+=======
+    $('.parallax').parallax();
+>>>>>>> origin/Post
   });
 
 // $(document).ready(function(){ funcion de transiciones
 //   <% for i in 1..4 -%>
 //      $("#box<%= i %>").click(function(){
 //         $("#box<%= i %>").transition({
-  			
+
 //   			//delay: 150,
 //   			//easing: 'in',
 //   			x: '40px'
 // 		});
 //      });
 
-     
+
 //   <% end -%>
 // });
 </script>
 </body>
+
 </html>
