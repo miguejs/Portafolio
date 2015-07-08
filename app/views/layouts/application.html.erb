@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Site</title>
+      <title>Madev</title>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
@@ -13,6 +13,7 @@
          <%if user_signed_in?%>
          <div class="nav-wrapper blue">
             <a href="#" data-activates="mobile-demo" class=" blue button-collapse"><i class="mdi-navigation-menu"></i></a>
+             <a href="<%=root_path%>" class="brand-logo"> Portafolio Web </a>
             <ul class="right hide-on-med-and-down blue ">
                <li>
                   <a href="<%=root_path%>" class="tooltipped white-text" data-position="bottom" data-delay="50" data-tooltip="Pagina Principal" >

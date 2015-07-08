@@ -27,16 +27,18 @@
             <%= f.text_field :link %>
           </div>
           <div class="field">
-            <%= f.label :Imagen %><br>
             <!-- <%= f.file_field  :picture %> -->
-            <div class="file-field input-field">
+            <!-- <div class="file-field input-field">
 
               <div class="btn blue">
                 <span>Subir</span>
                 <input type="file" name="post[picture]" id="post_picture">
               </div>
+            </div> -->
+            <div class="field blue-text">
+              <%= f.label :picture %><br>
+              <%= f.text_field :picture %>
             </div>
-
           </div>
           <div class="actions">
             <p class="right-align">
